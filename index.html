@@ -7,10 +7,53 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap" rel="stylesheet">
     <title>Meu protótipo</title>
+    <meta name="description" content="Uma breve descrição do conteúdo da sua página. Isso aparece nos resultados de pesquisa do Google.">
+    <meta name="author" content="Seu Nome ou Nome da Empresa">
+    <meta name="keywords" content="palavra-chave, outra-palavra-chave, mais-uma-palavra-chave">
+
+    <meta property="og:title" content="Título da sua Página para Redes Sociais">
+    <meta property="og:description" content="Uma descrição otimizada para ser compartilhada em plataformas como Facebook e LinkedIn.">
+    <meta property="og:image" content="URL_da_imagem_do_projeto.jpg">
+    <meta property="og:url" content="URL_do_seu_site">
+    <meta property="og:type" content="website">
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <link rel="icon" type="image/png" href="images/favicon.png">
+
 </head>
 <body>
-    <header></header>
-    <nav></nav>
-    <section></section>
+    <header>
+        <h1>Título Principal do seu Site ou Projeto</h1>
+        <nav>
+            <ul>
+                <li><a href="#">Link 1</a></li>
+                <li><a href="#">Link 2</a></li>
+                <li><a href="#">Link 3</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section>
+            <h2>Seção 1</h2>
+            <p>Este é um parágrafo de exemplo. Use esta seção para o conteúdo principal da sua página. Use tags semânticas como <code>&lt;section&gt;</code>, <code>&lt;article&gt;</code>, etc., para organizar o conteúdo.</p>
+        </section>
+
+        <section>
+            <h2>Seção 2</h2>
+            <p>Outro parágrafo de exemplo. O uso de títulos (<code>&lt;h1&gt;</code>, <code>&lt;h2&gt;</code>, etc.) de forma hierárquica é importante para acessibilidade e SEO.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; <span id="current-year"></span> Seu Nome ou Nome da Empresa. Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script>
+        // Adiciona o ano atual no rodapé dinamicamente
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+    </script>
 </body>
 </html>
