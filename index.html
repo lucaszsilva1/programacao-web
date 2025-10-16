@@ -6,53 +6,74 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap" rel="stylesheet">
-    <title>Meu protótipo</title>
-    <meta name="description" content="Uma breve descrição do conteúdo da sua página. Isso aparece nos resultados de pesquisa do Google.">
-    <meta name="author" content="Seu Nome ou Nome da Empresa">
-    <meta name="keywords" content="palavra-chave, outra-palavra-chave, mais-uma-palavra-chave">
+    <title>Banco Comunitário de Soluções Urbanas</title>
+    <meta name="description" content="Banco Comunitário de Soluções Urbanas - Participe na construção de uma cidade melhor.">
+    <meta name="author" content="Lucas Souza Silva">
+    <meta name="keywords" content="soluções urbanas, problemas urbanos, participação cidadã, Cornélio Procópio">
 
-    <meta property="og:title" content="Título da sua Página para Redes Sociais">
-    <meta property="og:description" content="Uma descrição otimizada para ser compartilhada em plataformas como Facebook e LinkedIn.">
-    <meta property="og:image" content="URL_da_imagem_do_projeto.jpg">
-    <meta property="og:url" content="URL_do_seu_site">
+    <meta property="og:title" content="Banco Comunitário de Soluções Urbanas">
+    <meta property="og:description" content="Participe na construção de uma cidade melhor em Cornélio Procópio.">
+    <meta property="og:image" content="https://i.imgur.com/Image.png">
+    <meta property="og:url" content="https://example.com">
     <meta property="og:type" content="website">
-
-    <link rel="stylesheet" href="css/style.css">
-
-    <link rel="icon" type="image/png" href="images/favicon.png">
-
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!-- Cabeçalho: Contém a navegação principal do site -->
     <header>
-        <h1>Título Principal do seu Site ou Projeto</h1>
-        <nav>
-            <ul>
-                <li><a href="#">Link 1</a></li>
-                <li><a href="#">Link 2</a></li>
-                <li><a href="#">Link 3</a></li>
+        <nav class="navbar">
+            <a href="index.html" class="logo">Banco Comunitário</a>
+            <!-- Checkbox para controlar a visibilidade do menu hambúrguer em telas pequenas -->
+            <input type="checkbox" id="menu-toggle">
+            <!-- Ícone do menu hambúrguer -->
+            <label for="menu-toggle" class="menu-icon">&#9776;</label>
+            <!-- Links de navegação -->
+            <ul class="nav-links">
+                <li><a href="index.html">Página Principal</a></li>
+                <li><a href="cadastro.html">Cadastro</a></li>
+                <li><a href="contato.html">Contato</a></li>
+                <li><a href="sobre.html">Sobre</a></li>
             </ul>
         </nav>
     </header>
 
-    <main>
-        <section>
-            <h2>Seção 1</h2>
-            <p>Este é um parágrafo de exemplo. Use esta seção para o conteúdo principal da sua página. Use tags semânticas como <code>&lt;section&gt;</code>, <code>&lt;article&gt;</code>, etc., para organizar o conteúdo.</p>
-        </section>
+    <!-- Banner Principal: Seção de destaque com título e descrição -->
+    <div class="main-banner">
+        <h1>Banco Comunitário de Soluções Urbanas</h1>
+        <p>Participe na construção de uma cidade melhor.</p>
+    </div>
 
+    <!-- Conteúdo Principal da Página -->
+    <main>
+        <!-- Seção de Problemas Recentes: Exibe cards com problemas e sugestões -->
         <section>
-            <h2>Seção 2</h2>
-            <p>Outro parágrafo de exemplo. O uso de títulos (<code>&lt;h1&gt;</code>, <code>&lt;h2&gt;</code>, etc.) de forma hierárquica é importante para acessibilidade e SEO.</p>
+            <h2>Problemas Recentes</h2>
+            <div class="cards">
+                <div class="card">
+                    <h3>Buraco na Rua Principal</h3>
+                    <p>Um grande buraco na rua principal está causando problemas para os motoristas.</p>
+                </div>
+                <div class="card">
+                    <h3>Iluminação Pública Defeituosa</h3>
+                    <p>A iluminação em várias ruas do bairro está com defeito, aumentando a insegurança.</p>
+                </div>
+                <div class="card">
+                    <h3>Calçada Quebrada</h3>
+                    <p>Uma calçada quebrada na praça central dificulta a passagem de pedestres.</p>
+                </div>
+            </div>
         </section>
     </main>
 
-    <footer>
-        <p>&copy; <span id="current-year"></span> Seu Nome ou Nome da Empresa. Todos os direitos reservados.</p>
+    <!-- Rodapé: Contém informações de copyright e contato -->
+    <footer class="footer">
+        <p>&copy; <span id="current-year"></span> Banco Comunitário. Todos os direitos reservados.</p>
+        <p>Endereço: Rua Exemplo, 123 - Cornélio Procópio, PR</p>
+        <p>Contato: (43) 1234-5678 | email@exemplo.com</p>
     </footer>
 
-    <script src="js/script.js"></script>
+    <!-- Script para atualizar o ano no rodapé dinamicamente -->
     <script>
-        // Adiciona o ano atual no rodapé dinamicamente
         document.getElementById('current-year').textContent = new Date().getFullYear();
     </script>
 </body>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap" rel="stylesheet">
+    <title>Cadastro - Banco Comunitário de Soluções Urbanas</title>
+    <meta name="description" content="Cadastre-se e sugira soluções para problemas urbanos em Cornélio Procópio.">
+    <meta name="author" content="Lucas Souza Silva">
+    <meta property="og:title" content="Banco Comunitário de Soluções Urbanas">
+    <meta property="og:description" content="Participe na construção de uma cidade melhor em Cornélio Procópio.">
+    <meta property="og:image" content="https://i.imgur.com/Image.png">
+    <meta property="og:url" content="https://example.com">
+    <meta property="og:type" content="website">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="hero">
+        <div class="container">
+            <h1>Cadastro de Usuários e Soluções</h1>
+            <p>Participe na construção de uma cidade melhor.</p>
+        </div>
+    </header>
+
+    <nav class="container">
+        <ul>
+            <li><a href="index.html">Página Principal</a></li>
+            <li><a href="cadastro.html">Cadastro</a></li>
+            <li><a href="contato.html">Contato</a></li>
+            <li><a href="sobre.html">Sobre</a></li>
+        </ul>
+    </nav>
+
+    <main class="container">
+        <section>
+            <h2>Cadastre-se</h2>
+            <form action="#" method="post">
+                <label for="nome">Nome:</label>
+                <input type="text" id="nome" name="nome" required>
+                <label for="email">E-mail:</label>
+                <input type="email" id="email" name="email" required>
+                <button type="submit">Cadastrar</button>
+            </form>
+        </section>
+        <section>
+            <h2>Sugira uma Solução</h2>
+            <form action="#" method="post">
+                <label for="problema">Problema Urbano:</label>
+                <input type="text" id="problema" name="problema" required>
+                <label for="solucao">Sua Solução:</label>
+                <textarea id="solucao" name="solucao" rows="4" required></textarea>
+                <button type="submit">Enviar Sugestão</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; <span id="current-year"></span> Lucas Souza Silva. Todos os direitos reservados.</p>
+    </footer>
+
+    <script>
+        // Adiciona o ano atual no rodapé dinamicamente
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>
