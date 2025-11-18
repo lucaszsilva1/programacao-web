@@ -60,10 +60,10 @@ Este projeto contribui diretamente para o **Objetivo de Desenvolvimento Sustent�
 <!-- Adicione aqui screenshots, GIFs ou um vídeo da aplicação em funcionamento -->
 <div align="center">
   <p>Página Inicial</p>
-  <img src="imagens/demo-home.png" alt="Demonstração da Página Inicial" width="700">
+  <img src="imagens/DEMO-HOME.PNG" alt="Demonstração da Página Inicial" width="700">
   <br><br>
   <p>Formulário de Cadastro</p>
-  <img src="imagens/demo-cadastro.png" alt="Demonstração do Formulário" width="700">
+  <img src="imagens/demo-cadastro.PNG" alt="Demonstração do Formulário" width="700">
 </div>
 
 ---
@@ -130,7 +130,7 @@ Distribuído sob a licença MIT. Veja `LICENSE.txt` para mais informações.
 
 ## 🧑‍💻 Desenvolvedores
 
-| [<img src="https://avatars.githubusercontent.com/u/lucaszsilva1" width="115"><br><sub>Lucas Souza Silva</sub>](https://github.com/lucaszsilva1) |
+| [<img src="imagens/foto-lucas.jpg" width="115"><br><sub>Lucas Souza Silva</sub>](https://github.com/lucaszsilva1) |
 
 <p align="center">
   Feito com ❤️ pelo <strong>Lucas</strong>.

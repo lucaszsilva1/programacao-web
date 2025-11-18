@@ -1,4 +1,4 @@
- UTFPR LICENSE
+ MIT LICENSE
 
 Copyright (c) 2025 Lucas Souza Silva
 
