@@ -1,61 +1,81 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contato - Banco Comunitário de Soluções Urbanas</title>
+    
+    <!-- UI: Google Fonts para tipografia consistente e moderna -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap" rel="stylesheet">
-    <title>Contato - Banco Comunitário de Soluções Urbanas</title>
-    <meta name="description" content="Entre em contato conosco e com órgãos públicos de Cornélio Procópio.">
-    <meta name="author" content="Lucas Souza Silva">
-    <meta property="og:title" content="Banco Comunitário de Soluções Urbanas">
-    <meta property="og:description" content="Participe na construção de uma cidade melhor em Cornélio Procópio.">
-    <meta property="og:image" content="https://i.imgur.com/Image.png">
-    <meta property="og:url" content="https://example.com">
-    <meta property="og:type" content="website">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+
+    <!-- UI: Link para o arquivo de estilos principal -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header class="hero">
+
+    <!-- UI: Cabeçalho principal consistente com o restante do site -->
+    <header class="main-header">
         <div class="container">
-            <h1>Contato</h1>
-            <p>Participe na construção de uma cidade melhor.</p>
+            <a href="index.html" class="logo">Soluções Urbanas</a>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="cadastro.html">Sugerir Solução</a></li>
+                    <li><a href="contato.html" class="active">Contato</a></li> <!-- UI: Link ativo para indicar a página atual -->
+                </ul>
+            </nav>
         </div>
     </header>
 
-    <nav class="container">
-        <ul>
-            <li><a href="index.html">Página Principal</a></li>
-            <li><a href="cadastro.html">Cadastro</a></li>
-            <li><a href="contato.html">Contato</a></li>
-            <li><a href="sobre.html">Sobre</a></li>
-        </ul>
-    </nav>
+    <main>
+        <div class="container">
+            <!-- UI: Utiliza o mesmo contêiner de formulário para um visual limpo e focado -->
+            <div class="form-container">
+                <h1 class="section-title">Fale Conosco</h1>
+                <p style="text-align: center; margin-top: -1.5rem; margin-bottom: 2rem; color: var(--color-text-secondary);">
+                    Tem alguma dúvida ou sugestão? Entre em contato com nossa equipe ou com os órgãos públicos da cidade.
+                </p>
 
-    <main class="container">
-        <section>
-            <h2>Nossas Informações de Contato</h2>
-            <p>Email: contato@solucoesurbanas.com</p>
-            <p>Telefone: (43) 9999-9999</p>
-        </section>
-        <section>
-            <h2>Órgãos Públicos e Sociais</h2>
-            <ul>
-                <li><a href="#">Prefeitura de Cornélio Procópio</a></li>
-                <li><a href="#">Câmara de Vereadores</a></li>
-                <li><a href="#">Associação Comercial</a></li>
-            </ul>
-        </section>
+                <!-- UI: Seção para informações de contato da equipe, bem definida -->
+                <section style="margin-bottom: 2.5rem;">
+                    <h2 style="font-size: 1.5rem; text-align: center; margin-bottom: 1.5rem;">Nossas Informações</h2>
+                    <div style="text-align: center; font-size: 1.1rem; line-height: 1.8;">
+                        <p><strong>Email:</strong> <a href="mailto:contato@solucoesurbanas.com">contato@solucoesurbanas.com</a></p>
+                        <p><strong>Telefone:</strong> (43) 9999-9999</p>
+                    </div>
+                </section>
+
+                <!-- UI: Seção para links externos, com uma lista clara e espaçada -->
+                <section>
+                    <h2 style="font-size: 1.5rem; text-align: center; margin-bottom: 1.5rem;">Órgãos Públicos e Sociais</h2>
+                    <ul style="list-style: none; padding: 0; text-align: center;">
+                        <li style="margin-bottom: 1rem;">
+                            <a href="#" class="btn btn-primary" style="width: 100%; max-width: 300px;">Prefeitura de Cornélio Procópio</a>
+                        </li>
+                        <li style="margin-bottom: 1rem;">
+                            <a href="#" class="btn btn-primary" style="width: 100%; max-width: 300px;">Câmara de Vereadores</a>
+                        </li>
+                        <li>
+                            <a href="#" class="btn btn-primary" style="width: 100%; max-width: 300px;">Associação Comercial</a>
+                        </li>
+                    </ul>
+                </section>
+            </div>
+        </div>
     </main>
 
-    <footer>
-        <p>&copy; <span id="current-year"></span> Lucas Souza Silva. Todos os direitos reservados.</p>
+    <!-- UI: Rodapé consistente com o restante do site -->
+    <footer class="main-footer">
+        <div class="container">
+            <ul class="footer-links">
+                <li><a href="#">Currículos</a></li>
+                <li><a href="contato.html">Contato</a></li>
+            </ul>
+            <p class="footer-mention">Desenvolvido para a Universidade Tecnológica Federal do Paraná (UTFPR) - 2024</p>
+        </div>
     </footer>
 
-    <script>
-        // Adiciona o ano atual no rodapé dinamicamente
-        document.getElementById('current-year').textContent = new Date().getFullYear();
-    </script>
 </body>
 </html>

@@ -1,80 +1,137 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Banco Comunitário de Soluções Urbanas - Início</title>
+    
+    <!-- UI: Google Fonts para tipografia consistente e moderna -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap" rel="stylesheet">
-    <title>Banco Comunitário de Soluções Urbanas</title>
-    <meta name="description" content="Banco Comunitário de Soluções Urbanas - Participe na construção de uma cidade melhor.">
-    <meta name="author" content="Lucas Souza Silva">
-    <meta name="keywords" content="soluções urbanas, problemas urbanos, participação cidadã, Cornélio Procópio">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
 
-    <meta property="og:title" content="Banco Comunitário de Soluções Urbanas">
-    <meta property="og:description" content="Participe na construção de uma cidade melhor em Cornélio Procópio.">
-    <meta property="og:image" content="https://i.imgur.com/Image.png">
-    <meta property="og:url" content="https://example.com">
-    <meta property="og:type" content="website">
+    <!-- UI: Link para o arquivo de estilos principal -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Cabeçalho: Contém a navegação principal do site -->
-    <header>
-        <nav class="navbar">
-            <a href="index.html" class="logo">Banco Comunitário</a>
-            <!-- Checkbox para controlar a visibilidade do menu hambúrguer em telas pequenas -->
-            <input type="checkbox" id="menu-toggle">
-            <!-- Ícone do menu hambúrguer -->
-            <label for="menu-toggle" class="menu-icon">&#9776;</label>
-            <!-- Links de navegação -->
-            <ul class="nav-links">
-                <li><a href="index.html">Página Principal</a></li>
-                <li><a href="cadastro.html">Cadastro</a></li>
-                <li><a href="contato.html">Contato</a></li>
-                <li><a href="sobre.html">Sobre</a></li>
-            </ul>
-        </nav>
+
+    <!-- UI: Cabeçalho principal com navegação clara e logo para identificação da marca -->
+    <header class="main-header">
+        <div class="container">
+            <a href="index.html" class="logo">Soluções Urbanas</a> <!-- UI: Logo clicável para retornar à página inicial -->
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html" class="active">Início</a></li> <!-- UI: Link ativo para indicar a página atual -->
+                    <li><a href="cadastro.html">Sugerir Solução</a></li> <!-- UI: CTA secundário na navegação -->
+                    <li><a href="contato.html">Contato</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
 
-    <!-- Banner Principal: Seção de destaque com título e descrição -->
-    <div class="main-banner">
-        <h1>Banco Comunitário de Soluções Urbanas</h1>
-        <p>Participe na construção de uma cidade melhor.</p>
-    </div>
-
-    <!-- Conteúdo Principal da Página -->
     <main>
-        <!-- Seção de Problemas Recentes: Exibe cards com problemas e sugestões -->
-        <section>
-            <h2>Problemas Recentes</h2>
-            <div class="cards">
-                <div class="card">
-                    <h3>Buraco na Rua Principal</h3>
-                    <p>Um grande buraco na rua principal está causando problemas para os motoristas.</p>
-                </div>
-                <div class="card">
-                    <h3>Iluminação Pública Defeituosa</h3>
-                    <p>A iluminação em várias ruas do bairro está com defeito, aumentando a insegurança.</p>
-                </div>
-                <div class="card">
-                    <h3>Calçada Quebrada</h3>
-                    <p>Uma calçada quebrada na praça central dificulta a passagem de pedestres.</p>
-                </div>
+        <!-- UI: Seção Hero - Impacto visual imediato para comunicar o propósito da plataforma e incentivar a participação -->
+        <section class="hero">
+            <div class="container">
+                <h1>Qual problema da sua cidade você quer resolver hoje?</h1> <!-- UI: Título claro e engajador -->
+                <p>Participe, sugira melhorias e vote nas melhores ideias para transformar Cornélio Procópio.</p> <!-- UI: Descrição concisa do valor da plataforma -->
+                <a href="cadastro.html" class="btn btn-secondary">Sugira sua Solução Agora</a> <!-- UI: Call-to-Action principal, visível e convidativo -->
             </div>
         </section>
+
+        <div class="container main-content-grid">
+            <!-- UI: Seção de Feed - Apresenta problemas e soluções em um formato de fácil digestão (cards) -->
+            <section class="feed-section">
+                <h2 class="section-title">Problemas e Soluções da Comunidade</h2> <!-- UI: Título da seção para contextualização -->
+                
+                <div class="feed-grid">
+                    <!-- UI: Card de Exemplo - Estrutura repetível para cada problema/solução -->
+                    <article class="card">
+                        <img src="https://picsum.photos/400/200?random=1" alt="Ilustração do problema de buracos na rua" class="card-image"> <!-- UI: Imagem relevante para atrair a atenção e ilustrar o problema -->
+                        <div class="card-content">
+                            <h3 class="card-title">Buracos na Rua XV de Novembro</h3> <!-- UI: Título do problema, claro e conciso -->
+                            <p class="card-description">A rua principal do centro está com muitos buracos, causando transtorno para motoristas e pedestres. Sugestão de operação tapa-buracos urgente.</p> <!-- UI: Descrição breve para leitura rápida -->
+                            <div class="card-footer">
+                                <span class="card-category">Infraestrutura</span> <!-- UI: Categoria para facilitar a filtragem e organização mental -->
+                                <button class="vote-button">
+                                    <span class="vote-icon">👍</span> <!-- UI: Ícone visual para a ação de votar -->
+                                    <span class="vote-count">128</span> <!-- UI: Contador de votos para prova social e engajamento -->
+                                </button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Card de Exemplo 2 -->
+                    <article class="card">
+                        <img src="https://picsum.photos/400/200?random=2" alt="Ilustração do problema de lixo" class="card-image">
+                        <div class="card-content">
+                            <h3 class="card-title">Falta de Coleta Seletiva no Bairro Y</h3>
+                            <p class="card-description">Moradores do bairro gostariam de ter um sistema de coleta seletiva para reciclagem. A proposta é instalar pontos de coleta voluntária.</p>
+                            <div class="card-footer">
+                                <span class="card-category">Lixo</span>
+                                <button class="vote-button">
+                                    <span class="vote-icon">👍</span>
+                                    <span class="vote-count">97</span>
+                                </button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Card de Exemplo 3 -->
+                    <article class="card">
+                        <img src="https://picsum.photos/400/200?random=3" alt="Ilustração do problema de transporte" class="card-image">
+                        <div class="card-content">
+                            <h3 class="card-title">Melhorar Iluminação na Praça Central</h3>
+                            <p class="card-description">A praça está muito escura à noite, gerando insegurança. A sugestão é a troca das lâmpadas por modelos de LED, mais eficientes e claros.</p>
+                            <div class="card-footer">
+                                <span class="card-category">Segurança</span>
+                                <button class="vote-button">
+                                    <span class="vote-icon">👍</span>
+                                    <span class="vote-count">85</span>
+                                </button>
+                            </div>
+                        </div>
+                    </article>
+                    
+                    <!-- Adicionar mais cards conforme necessário -->
+
+                </div>
+            </section>
+
+            <!-- UI: Seção de Ranking - Destaca as ideias mais populares, incentivando a competição saudável e a participação -->
+            <aside class="ranking-section">
+                <h2 class="section-title">Top 3 Ideias</h2> <!-- UI: Título claro para a seção de ranking -->
+                <ol class="ranking-list">
+                    <li class="ranking-item">
+                        <span class="rank">1</span> <!-- UI: Número do ranking em destaque -->
+                        <p class="idea-title">Buracos na Rua XV de Novembro</p>
+                        <span class="vote-count">128</span> <!-- UI: Contador de votos para reforçar a popularidade -->
+                    </li>
+                    <li class="ranking-item">
+                        <span class="rank">2</span>
+                        <p class="idea-title">Falta de Coleta Seletiva no Bairro Y</p>
+                        <span class="vote-count">97</span>
+                    </li>
+                    <li class="ranking-item">
+                        <span class="rank">3</span>
+                        <p class="idea-title">Melhorar Iluminação na Praça Central</p>
+                        <span class="vote-count">85</span>
+                    </li>
+                </ol>
+            </aside>
+        </div>
     </main>
 
-    <!-- Rodapé: Contém informações de copyright e contato -->
-    <footer class="footer">
-        <p>&copy; <span id="current-year"></span> Banco Comunitário. Todos os direitos reservados.</p>
-        <p>Endereço: Rua Exemplo, 123 - Cornélio Procópio, PR</p>
-        <p>Contato: (43) 1234-5678 | email@exemplo.com</p>
+    <!-- UI: Rodapé consistente em todas as páginas para navegação secundária e informações institucionais -->
+    <footer class="main-footer">
+        <div class="container">
+            <ul class="footer-links">
+                <li><a href="#">Currículos</a></li>
+                <li><a href="contato.html">Contato</a></li>
+            </ul>
+            <p class="footer-mention">Desenvolvido para a Universidade Tecnológica Federal do Paraná (UTFPR) - 2024</p>
+        </div>
     </footer>
 
-    <!-- Script para atualizar o ano no rodapé dinamicamente -->
-    <script>
-        document.getElementById('current-year').textContent = new Date().getFullYear();
-    </script>
 </body>
 </html>

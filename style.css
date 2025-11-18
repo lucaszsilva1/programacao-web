@@ -1,328 +1,425 @@
-/* =========================================
-  🌐 Reset + Variáveis Globais
-======================================== */
+/* 
+---
+Banco Comunitário de Soluções Urbanas - Stylesheet
+Persona: Senior Front-End & UX/UI Specialist
+---
+*/
+
+/* --- 1. Design System & Variables --- */
 :root {
-    /* 🎨 Paleta Urbana Minimalista */
-    --color-primary: #3C6E47;     /* Verde floresta */
-    --color-secondary: #333333;   /* Cinza carvão */
-    --color-accent: #A1D38E;      /* Verde claro */
-    --color-bg: #F9F9F9;          /* Branco neve */
-    --color-surface: #D3D3D3;     /* Cinza claro */
-    --color-text: #222;           /* Texto principal */
-    --color-muted: #666;          /* Texto secundário */
-  
-    /* 🔤 Fontes */
-    --font-title: 'DM Serif Text', serif;
-    --font-body: 'Nunito Sans', sans-serif;
-  
-    /* 📏 Espaçamento padrão */
-    --spacing-xs: 0.5rem;
-    --spacing-sm: 1rem;
-    --spacing-md: 2rem;
-    --spacing-lg: 4rem;
-  
-    /* 💎 Outros */
-    --radius: 8px;
-    --transition: 0.3s ease-in-out;
-  }
-  
-  * {
+    /* UI: Paleta de Cores - Escolhida para transmitir confiança (azul), ação/sustentabilidade (verde) e destaque (amarelo).
+       As cores são definidas como variáveis CSS para facilitar a manutenção e garantir consistência visual. */
+    --color-primary: #005A9C; /* Azul Institucional: confiança, seriedade, base para elementos interativos */
+    --color-secondary: #2E8540; /* Verde Ação: sustentabilidade, crescimento, usado para CTAs secundários e elementos positivos */
+    --color-accent: #FDB813; /* Amarelo Destaque: atenção, otimismo, para elementos que precisam de visibilidade imediata */
+    
+    --color-text-primary: #212529; /* Preto Suave: alta legibilidade para o corpo do texto */
+    --color-text-secondary: #6c757d; /* Cinza Médio: texto de apoio, descrições, menos proeminente */
+    --color-background-light: #f8f9fa; /* Cinza Claro: fundo principal, suave e neutro para não competir com o conteúdo */
+    --color-background-white: #ffffff; /*tBranco: fundo de cards e formulários para criar contraste e clareza */
+    --color-border: #dee2e6; /* Cinza para bordas: delimita elementos sem ser intrusivo */
+
+    --color-success: #28a745; /* Verde para mensagens de sucesso, feedback positivo */
+    --color-error: #dc3545; /* Vermelho para mensagens de erro, feedback negativo */
+
+    /* UI: Tipografia - Combinação de fontes para clareza e modernidade. Poppins para títulos (impacto), Lato para corpo (legibilidade). */
+    --font-headings: 'Poppins', sans-serif;
+    --font-body: 'Lato', sans-serif;
+
+    /* UI: Outras Variáveis - Padronização de elementos visuais para consistência. */
+    --border-radius: 8px; /* Bordas arredondadas para um visual mais amigável e moderno */
+    --box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); /* Sombra sutil para dar profundidade e destacar elementos interativos */
+    --transition-speed: 0.3s; /* Velocidade padrão para transições, garantindo feedback visual suave */
+}
+
+/* --- 2. Reset e Estilos Globais --- */
+/* UI: Reset básico para garantir consistência entre navegadores e controle total sobre o estilo. */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-  }
-  
-  body {
-    background-color: var(--color-bg);
-    color: var(--color-text);
-    font-family: var(--font-body);
-    line-height: 1.6;
-    font-size: 1rem;
-    scroll-behavior: smooth;
-    padding-top: 60px; /* Espaço para o navbar fixo */
-    padding-bottom: 80px; /* Espaço para o footer fixo */
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-  }
-  
-  /* =========================================
-    🔠 Tipografia
-  ======================================== */
-  h1, h2, h3, h4, h5, h6 {
-    font-family: var(--font-title);
-    color: var(--color-primary);
-    margin-bottom: var(--spacing-sm);
-    line-height: 1.2;
-  }
-  
-  p, span, li, label {
-    color: var(--color-text);
-  }
-  
-  a {
-    color: var(--color-primary);
+}
+
+html {
+    scroll-behavior: smooth; /* UI: Rolagem suave para melhor experiência de navegação */
+    font-size: 16px; /* UI: Base para REMs, facilitando a escalabilidade e responsividade da tipografia */
+}
+
+body {
+    font-family: var(--font-body); /* UI: Fonte principal para o corpo do texto, escolhida pela legibilidade */
+    color: var(--color-text-primary); /* UI: Cor de texto principal para alto contraste */
+    background-color: var(--color-background-light); /* UI: Fundo suave para reduzir a fadiga visual */
+    line-height: 1.6; /* UI: Espaçamento entre linhas otimizado para leitura confortável */
+    -webkit-font-smoothing: antialiased; /* UI: Suavização de fontes para melhor renderização em telas digitais */
+    -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-headings); /* UI: Fonte para títulos, para impacto e hierarquia visual */
+    color: var(--color-primary); /* UI: Cor primária para títulos, reforçando a identidade da marca */
+    font-weight: 600; /* UI: Peso da fonte para destaque dos títulos */
+    line-height: 1.2; /* UI: Espaçamento entre linhas menor para títulos */
+    margin-bottom: 0.75rem; /* UI: Espaçamento abaixo dos títulos para separação clara do conteúdo */
+}
+
+a {
+    color: var(--color-primary); /* UI: Cor primária para links, indicando interatividade */
+    text-decoration: none; /* UI: Remove sublinhado padrão para um visual mais limpo */
+    transition: color var(--transition-speed); /* UI: Transição suave de cor ao interagir com links */
+}
+
+a:hover {
+    color: var(--color-secondary); /* UI: Muda a cor do link ao passar o mouse para feedback visual */
+    text-decoration: underline; /* UI: Adiciona sublinhado ao passar o mouse para reforçar que é um link */
+}
+
+img {
+    max-width: 100%; /* UI: Garante que imagens não excedam a largura do contêiner, essencial para responsividade */
+    height: auto; /* UI: Mantém a proporção da imagem */
+    display: block; /* UI: Remove espaço extra abaixo da imagem */
+}
+
+/* --- 3. Layout e Componentes Reutilizáveis --- */
+.container {
+    width: 90%; /* UI: Largura fluida para se adaptar a diferentes tamanhos de tela */
+    max-width: 1200px; /* UI: Limita a largura máxima para legibilidade em telas grandes */
+    margin: 0 auto; /* UI: Centraliza o conteúdo na página */
+    padding: 2rem 0; /* UI: Espaçamento vertical para respiro do conteúdo */
+}
+
+/* Header */
+.main-header {
+    background-color: var(--color-background-white); /* UI: Fundo branco para o cabeçalho, limpo e profissional */
+    padding: 1rem 0; /* UI: Espaçamento interno para o cabeçalho */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); /* UI: Sombra sutil para destacar o cabeçalho do restante da página */
+    border-bottom: 1px solid var(--color-border); /* UI: Linha sutil para separar o cabeçalho */
+}
+
+.main-header .container {
+    display: flex; /* UI: Layout flexbox para alinhar logo e navegação */
+    justify-content: space-between; /* UI: Distribui espaço entre logo e navegação */
+    align-items: center; /* UI: Alinha verticalmente logo e navegação */
+    padding-top: 0; /* UI: Remove padding vertical extra do container para o header */
+    padding-bottom: 0;
+}
+
+.logo {
+    font-family: var(--font-headings); /* UI: Usa a fonte de títulos para o logo, reforçando a identidade */
+    font-size: 1.5rem; /* UI: Tamanho do logo */
+    font-weight: 700; /* UI: Peso da fonte para destaque do logo */
+    color: var(--color-primary); /* UI: Cor primária para o logo */
+}
+
+.main-nav ul {
+    list-style: none; /* UI: Remove marcadores de lista padrão */
+    display: flex; /* UI: Layout flexbox para itens de navegação */
+    gap: 1.5rem; /* UI: Espaçamento entre os itens de navegação */
+}
+
+.main-nav a {
+    font-weight: 600; /* UI: Peso da fonte para itens de navegação */
+    font-size: 1rem; /* UI: Tamanho da fonte para itens de navegação */
+    text-decoration: none; /* UI: Remove sublinhado padrão */
+    padding-bottom: 0.25rem; /* UI: Espaçamento para a borda inferior */
+    border-bottom: 2px solid transparent; /* UI: Borda transparente para transição suave */
+}
+
+.main-nav a:hover, .main-nav a.active {
+    color: var(--color-secondary); /* UI: Feedback visual ao passar o mouse ou para a página ativa */
+    border-bottom-color: var(--color-secondary); /* UI: Borda inferior colorida para indicar item ativo/hover */
+}
+
+/* Footer */
+.main-footer {
+    background-color: var(--color-text-primary); /* UI: Fundo escuro para o rodapé, criando contraste com o corpo da página */
+    color: var(--color-background-light); /* UI: Texto claro no rodapé para legibilidade no fundo escuro */
+    padding: 2rem 0; /* UI: Espaçamento interno para o rodapé */
+    text-align: center; /* UI: Centraliza o texto do rodapé */
+    margin-top: 3rem; /* UI: Espaçamento superior para separar do conteúdo principal */
+}
+
+.main-footer .container {
+    padding: 0; /* UI: Remove padding vertical extra do container para o footer */
+}
+
+.footer-links {
+    list-style: none; /* UI: Remove marcadores de lista */
+    display: flex; /* UI: Layout flexbox para links do rodapé */
+    justify-content: center; /* UI: Centraliza os links do rodapé */
+    gap: 1.5rem; /* UI: Espaçamento entre os links */
+    margin-bottom: 1rem; /* UI: Espaçamento abaixo dos links */
+}
+
+.footer-links a {
+    color: var(--color-background-white); /* UI: Links brancos para contraste no fundo escuro */
+}
+
+.footer-mention {
+    font-size: 0.9rem; /* UI: Texto menor para informações secundárias */
+    opacity: 0.8; /* UI: Opacidade reduzida para indicar que é um texto de menor importância */
+}
+
+/* Botões */
+/* UI: Estilos de botão reutilizáveis para consistência e feedback visual claro. */
+.btn {
+    display: inline-block; /* UI: Permite aplicar padding e largura */
+    padding: 0.75rem 1.5rem; /* UI: Espaçamento interno generoso para facilitar o clique */
+    border-radius: var(--border-radius); /* UI: Bordas arredondadas para um visual amigável */
+    border: 2px solid transparent; /* UI: Borda transparente para consistência e transição */
+    font-family: var(--font-headings); /* UI: Fonte de títulos para destaque */
+    font-weight: 600; /* UI: Peso da fonte para destaque */
+    font-size: 1rem; /* UI: Tamanho da fonte padrão */
+    text-align: center; /* UI: Centraliza o texto do botão */
+    cursor: pointer; /* UI: Indica que o elemento é clicável */
+    transition: all var(--transition-speed) ease; /* UI: Transições suaves para estados de hover/active */
+    text-decoration: none; /* UI: Remove sublinhado padrão */
+}
+
+.btn-primary {
+    background-color: var(--color-primary); /* UI: Cor de fundo primária para o CTA principal */
+    color: var(--color-background-white); /* UI: Texto branco para alto contraste */
+}
+
+.btn-primary:hover {
+    background-color: #004a80; /* UI: Tom mais escuro ao passar o mouse para feedback visual */
+    color: var(--color-background-white);
+    transform: translateY(-2px); /* UI: Efeito sutil de "levantar" para indicar interatividade */
+    box-shadow: 0 6px 15px rgba(0, 90, 156, 0.3); /* UI: Sombra mais pronunciada ao passar o mouse */
     text-decoration: none;
-    transition: color var(--transition);
-  }
-  
-  a:hover {
-    color: var(--color-accent);
-  }
-  
-  /* =========================================
-    📦 Layout Utilitário
-  ======================================== */
-  .container {
-    width: 90%;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: var(--spacing-md) 0;
-  }
-  
-  section {
-    padding: var(--spacing-md) 0;
-  }
-  
-  /* =========================================
-    🧭 Navegação (Navbar) - Redesenhado para ser fixo, responsivo e minimalista
-  ======================================== */
-  header {
-    background-color: var(--color-secondary);
-    color: white;
-    position: fixed;
-    width: 100%;
-    top: 0;
-    left: 0;
-    z-index: 1000;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); /* Sombra mais sutil para um visual minimalista */
-  }
+}
 
-  .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: var(--spacing-sm) var(--spacing-md);
-    max-width: 1200px;
-    margin: 0 auto;
-  }
+.btn-secondary {
+    background-color: var(--color-secondary); /* UI: Cor de fundo secundária para CTAs de menor prioridade */
+    color: var(--color-background-white); /* UI: Texto branco para alto contraste */
+}
 
-  .navbar .logo {
-    color: white;
-    font-family: var(--font-title);
-    font-size: 1.5rem;
-    font-weight: bold;
-  }
+.btn-secondary:hover {
+    background-color: #246b33; /* UI: Tom mais escuro ao passar o mouse para feedback visual */
+    color: var(--color-background-white);
+    transform: translateY(-2px); /* UI: Efeito sutil de "levantar" */
+    box-shadow: 0 6px 15px rgba(46, 133, 64, 0.3); /* UI: Sombra mais pronunciada ao passar o mouse */
+    text-decoration: none;
+}
 
-  .nav-links {
-    list-style: none;
-    display: flex;
-    gap: var(--spacing-md);
-  }
+/* Cards */
+/* UI: Estilo de card otimizado para leitura rápida e organização visual de itens de conteúdo. */
+.card {
+    background-color: var(--color-background-white); /* UI: Fundo branco para destacar o card do fundo da página */
+    border-radius: var(--border-radius); /* UI: Bordas arredondadas para um visual moderno */
+    box-shadow: var(--box-shadow); /* UI: Sombra para dar profundidade e separar o card */
+    overflow: hidden; /* UI: Garante que o conteúdo não vaze das bordas arredondadas */
+    transition: all var(--transition-speed) ease; /* UI: Transição suave para o efeito de hover */
+    display: flex; /* UI: Flexbox para organizar o conteúdo verticalmente */
+    flex-direction: column; /* UI: Conteúdo empilhado verticalmente */
+}
 
-  .nav-links li a {
-    color: white;
-    padding: 0.5rem 1rem;
-    border-radius: var(--radius);
-    transition: background-color var(--transition), color var(--transition);
-  }
+.card:hover {
+    transform: translateY(-5px); /* UI: Efeito sutil de "levantar" ao passar o mouse, indicando interatividade */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12); /* UI: Sombra mais pronunciada ao passar o mouse */
+}
 
-  .nav-links li a:hover {
-    background-color: var(--color-primary);
-    color: white;
-  }
+.card-image {
+    width: 100%; /* UI: Imagem ocupa toda a largura do card */
+    height: 200px; /* UI: Altura fixa para consistência visual entre os cards */
+    object-fit: cover; /* UI: Garante que a imagem cubra a área sem distorcer, cortando se necessário */
+}
 
-  .menu-icon {
-    display: none;
-    font-size: 2rem;
-    cursor: pointer;
-    color: white;
-  }
+.card-content {
+    padding: 1.5rem; /* UI: Espaçamento interno para o conteúdo do card */
+    flex-grow: 1; /* UI: Permite que o conteúdo cresça para preencher o espaço disponível */
+    display: flex; /* UI: Flexbox para organizar o conteúdo interno */
+    flex-direction: column; /* UI: Conteúdo interno empilhado verticalmente */
+}
 
-  #menu-toggle {
-    display: none; /* Esconde o checkbox que controla o menu hambúrguer */
-  }
-  
-  /* =========================================
-    🖼️ Banner Principal - Seção de destaque com informações importantes
-  ======================================== */
-  .main-banner {
-    background-color: var(--color-primary);
-    color: white;
-    text-align: center;
-    padding: var(--spacing-lg) var(--spacing-md);
-    margin-bottom: var(--spacing-md);
-  }
+.card-title {
+    font-size: 1.25rem; /* UI: Tamanho do título do card para destaque */
+    margin-bottom: 0.5rem; /* UI: Espaçamento abaixo do título */
+}
 
-  .main-banner h1 {
-    font-size: 3rem;
-    margin-bottom: var(--spacing-sm);
-    color: white;
-  }
+.card-description {
+    font-size: 0.95rem; /* UI: Tamanho da fonte para a descrição, legível mas não dominante */
+    color: var(--color-text-secondary); /* UI: Cor secundária para a descrição, diferenciando do título */
+    flex-grow: 1; /* UI: Permite que a descrição ocupe o espaço restante */
+    margin-bottom: 1rem; /* UI: Espaçamento abaixo da descrição */
+}
 
-  .main-banner p {
-    font-size: 1.5rem;
-    color: #f0f0f0;
-  }
+.card-footer {
+    display: flex; /* UI: Flexbox para alinhar elementos no rodapé do card */
+    justify-content: space-between; /* UI: Distribui espaço entre elementos */
+    align-items: center; /* UI: Alinha verticalmente elementos */
+    border-top: 1px solid var(--color-border); /* UI: Linha sutil para separar o rodapé do conteúdo */
+    padding-top: 1rem; /* UI: Espaçamento superior para o rodapé */
+    margin-top: auto; /* UI: Empurra o rodapé para a parte inferior do card */
+}
 
-  /* =========================================
-    💼 Cards & Grid (Conteúdo Principal) - Layout em grid para os cards de problemas
-  ======================================== */
-  main {
-    flex: 1; /* Permite que o main ocupe o espaço restante */
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Grid responsivo com colunas de no mínimo 300px */
-    gap: var(--spacing-md);
-    max-width: 1200px;
-    margin: var(--spacing-md) auto; /* Centraliza e adiciona margem */
-    padding: 0 var(--spacing-md);
-  }
+.vote-button {
+    display: flex; /* UI: Flexbox para alinhar ícone e contador de votos */
+    align-items: center; /* UI: Alinha verticalmente */
+    gap: 0.5rem; /* UI: Espaçamento entre ícone e texto */
+    background-color: var(--color-background-light); /* UI: Fundo claro para o botão de voto */
+    border: 1px solid var(--color-border); /* UI: Borda sutil */
+    padding: 0.5rem 1rem; /* UI: Espaçamento interno */
+    border-radius: 50px; /* UI: Bordas arredondadas para um visual de "pílula" */
+    font-weight: 600; /* UI: Peso da fonte para destaque */
+    cursor: pointer; /* UI: Indica que o elemento é clicável */
+    transition: all var(--transition-speed); /* UI: Transição suave para o efeito de hover */
+}
 
-  .cards {
-    display: contents; /* Permite que os cards sejam itens diretos do grid do main */
-  }
-  
-  .card {
-    background-color: white;
-    border-radius: var(--radius);
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05); /* Sombra mais sutil */
-    padding: var(--spacing-md);
-    transition: transform var(--transition);
-  }
-  
-  .card:hover {
-    transform: translateY(-5px);
-  }
-  
-  .card h3 {
-    margin-bottom: var(--spacing-xs);
-    color: var(--color-primary);
-  }
-  
-  /* =========================================
-    📋 Formulário
-  ======================================== */
-  form {
-    background-color: white;
-    padding: var(--spacing-md);
-    border-radius: var(--radius);
-    box-shadow: 0 1px 3px rgba(0,0,0,0.05); /* Sombra mais sutil */
-    display: flex;
-    flex-direction: column;
-    gap: var(--spacing-sm);
-  }
-  
-  input, textarea, select, button {
-    padding: var(--spacing-sm);
-    font-size: 1rem;
-    border-radius: var(--radius);
-    border: 1px solid var(--color-surface);
-    font-family: var(--font-body);
-  }
-  
-  input:focus,
-  textarea:focus,
-  select:focus {
-    border-color: var(--color-primary);
-    outline: none;
-  }
-  
-  button {
-    background-color: var(--color-accent);
-    color: #fff;
-    border: none;
-    cursor: pointer;
-    font-weight: bold;
-    transition: background var(--transition);
-  }
-  
-  button:hover {
-    background-color: #8fc976;
-  }
-  
-  /* =========================================
-    📞 Contato
-  ======================================== */
-  .contact-info {
-    background-color: var(--color-surface);
-    padding: var(--spacing-md);
-    border-radius: var(--radius);
-  }
-  
-  /* =========================================
-    🔚 Rodapé - Fixo na parte inferior da página
-  ======================================== */
-  .footer {
-    background-color: var(--color-secondary);
-    color: white;
-    text-align: center;
-    padding: var(--spacing-sm);
-    font-size: 0.9rem;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    left: 0;
-    box-shadow: 0 -1px 3px rgba(0, 0, 0, 0.1); /* Sombra mais sutil */
-  }
-  
-  .footer p {
-    color: white;
-    margin: 0.2rem 0;
-  }
-  
-  /* =========================================
-    📱 Responsivo - Ajustes para telas menores (mobile)
-  ======================================== */
-  @media (max-width: 768px) {
-    .navbar {
-      padding: var(--spacing-sm);
+.vote-button:hover {
+    background-color: var(--color-accent); /* UI: Cor de destaque ao passar o mouse para feedback visual */
+    border-color: var(--color-accent); /* UI: Borda colorida ao passar o mouse */
+    color: var(--color-text-primary); /* UI: Cor do texto para contraste */
+}
+
+.vote-count {
+    font-weight: 700; /* UI: Peso da fonte para destaque do número de votos */
+}
+
+/* Formulários */
+/* UI: Estilos para formulários, focando na clareza, usabilidade e feedback visual. */
+.form-container {
+    background-color: var(--color-background-white); /* UI: Fundo branco para o contêiner do formulário, destacando-o */
+    padding: 2.5rem; /* UI: Espaçamento interno generoso */
+    border-radius: var(--border-radius); /* UI: Bordas arredondadas */
+    box-shadow: var(--box-shadow); /* UI: Sombra para dar profundidade */
+    max-width: 800px; /* UI: Limita a largura para melhor legibilidade e usabilidade em telas grandes */
+    margin: 2rem auto; /* UI: Centraliza o formulário na página */
+}
+
+.form-group {
+    margin-bottom: 1.5rem; /* UI: Espaçamento entre grupos de formulário para clareza */
+}
+
+.form-group label {
+    display: block; /* UI: Label em sua própria linha para melhor acessibilidade e alinhamento */
+    font-weight: 600; /* UI: Peso da fonte para destaque do label */
+    margin-bottom: 0.5rem; /* UI: Espaçamento entre label e input */
+    color: var(--color-text-primary); /* UI: Cor de texto principal para labels */
+}
+
+.form-control {
+    width: 100%; /* UI: Input ocupa toda a largura disponível */
+    padding: 0.75rem 1rem; /* UI: Espaçamento interno para facilitar a digitação */
+    font-size: 1rem; /* UI: Tamanho da fonte padrão para inputs */
+    font-family: var(--font-body); /* UI: Fonte do corpo para inputs */
+    border: 1px solid var(--color-border); /* UI: Borda sutil */
+    border-radius: var(--border-radius); /* UI: Bordas arredondadas */
+    transition: border-color var(--transition-speed), box-shadow var(--transition-speed); /* UI: Transição suave para estados de foco */
+}
+
+.form-control:focus {
+    outline: none; /* UI: Remove outline padrão do navegador */
+    border-color: var(--color-primary); /* UI: Borda colorida ao focar para feedback visual */
+    box-shadow: 0 0 0 3px rgba(0, 90, 156, 0.2); /* UI: Sombra de foco para indicar o campo ativo */
+}
+
+textarea.form-control {
+    min-height: 150px; /* UI: Altura mínima para textareas, permitindo mais espaço para digitação */
+    resize: vertical; /* UI: Permite redimensionar apenas verticalmente para não quebrar o layout */
+}
+
+/* --- 4. Estilos Específicos das Páginas --- */
+
+/* index.html */
+.hero {
+    text-align: center; /* UI: Centraliza o conteúdo da seção hero */
+    padding: 4rem 1rem; /* UI: Espaçamento generoso para destacar a seção */
+    /* UI: Fundo com gradiente e imagem para criar um visual impactante e relevante ao tema urbano. */
+    background: linear-gradient(rgba(0, 90, 156, 0.8), rgba(0, 90, 156, 0.8)), url('https://via.placeholder.com/1200x400.png?text=Cornélio+Procópio') no-repeat center center/cover;
+    color: var(--color-background-white); /* UI: Texto branco para contraste com o fundo escuro */
+    border-radius: var(--border-radius); /* UI: Bordas arredondadas para suavizar a seção */
+}
+
+.hero h1 {
+    font-size: 2.5rem; /* UI: Título grande para chamar a atenção e comunicar o propósito */
+    color: var(--color-background-white); /* UI: Título branco para contraste */
+    margin-bottom: 1rem; /* UI: Espaçamento abaixo do título */
+}
+
+.hero p {
+    font-size: 1.2rem; /* UI: Texto de apoio legível */
+    max-width: 600px; /* UI: Limita a largura do parágrafo para melhor legibilidade */
+    margin: 0 auto 2rem; /* UI: Centraliza o parágrafo e adiciona espaçamento inferior */
+    opacity: 0.9; /* UI: Opacidade sutil para o texto de apoio */
+}
+
+.feed-grid {
+    display: grid; /* UI: Layout de grid para organizar os cards de problemas/soluções */
+    grid-template-columns: 1fr; /* UI: Uma coluna por padrão (mobile-first) */
+    gap: 2rem; /* UI: Espaçamento entre os cards */
+    margin-top: 2rem; /* UI: Espaçamento superior para o grid */
+}
+
+.section-title {
+    text-align: center; /* UI: Centraliza os títulos das seções */
+    margin-bottom: 2rem; /* UI: Espaçamento abaixo dos títulos das seções */
+    font-size: 2rem; /* UI: Tamanho do título da seção */
+}
+
+.ranking-list {
+    list-style: none; /* UI: Remove marcadores de lista padrão */
+    padding: 0; /* UI: Remove padding padrão */
+}
+
+.ranking-item {
+    display: flex; /* UI: Flexbox para alinhar elementos do item de ranking */
+    align-items: center; /* UI: Alinha verticalmente */
+    gap: 1rem; /* UI: Espaçamento entre elementos */
+    padding: 1rem; /* UI: Espaçamento interno */
+    background-color: var(--color-background-white); /* UI: Fundo branco para o item de ranking */
+    border-radius: var(--border-radius); /* UI: Bordas arredondadas */
+    margin-bottom: 1rem; /* UI: Espaçamento inferior */
+    box-shadow: var(--box-shadow); /* UI: Sombra sutil */
+}
+
+.ranking-item .rank {
+    font-size: 1.5rem; /* UI: Tamanho grande para o número do ranking, destacando a posição */
+    font-weight: 700; /* UI: Peso da fonte para destaque */
+    color: var(--color-accent); /* UI: Cor de destaque para o ranking */
+    min-width: 30px; /* UI: Largura mínima para o número do ranking */
+    text-align: center; /* UI: Centraliza o número do ranking */
+}
+
+.ranking-item .vote-count {
+    margin-left: auto; /* UI: Empurra o contador de votos para a direita */
+    font-weight: 700; /* UI: Peso da fonte para destaque */
+    color: var(--color-secondary); /* UI: Cor secundária para o contador de votos */
+}
+
+/* --- 5. Responsividade (Mobile-First) --- */
+/* UI: Abordagem mobile-first, garantindo que o layout seja funcional e legível em telas pequenas primeiro,
+   e depois adaptado para telas maiores com media queries. */
+
+/* Tablet */
+@media (min-width: 768px) {
+    .feed-grid {
+        grid-template-columns: repeat(2, 1fr); /* UI: Duas colunas para o grid de cards em tablets */
     }
 
-    .navbar .logo {
-      font-size: 1.2rem;
+    .hero h1 {
+        font-size: 3rem; /* UI: Aumenta o tamanho do título hero em tablets */
+    }
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+    .main-content-grid {
+        display: grid; /* UI: Layout de grid para a seção principal em desktops */
+        grid-template-columns: 3fr 1fr; /* UI: Conteúdo principal (feed) ocupa 3/4 e ranking 1/4 */
+        gap: 2rem; /* UI: Espaçamento entre as colunas */
+        align-items: start; /* UI: Alinha o conteúdo ao topo */
     }
 
-    .nav-links {
-      display: none;
-      flex-direction: column;
-      width: 100%;
-      background-color: var(--color-secondary);
-      position: absolute;
-      top: 60px; /* Altura do header */
-      left: 0;
-      padding: var(--spacing-sm) 0;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    .feed-grid {
+        grid-template-columns: repeat(2, 1fr); /* UI: Mantém duas colunas para o feed em desktops menores */
     }
+}
 
-    .nav-links li {
-      text-align: center;
-      margin: 0;
+/* Desktop Grande */
+@media (min-width: 1200px) {
+    .feed-grid {
+        grid-template-columns: repeat(3, 1fr); /* UI: Três colunas para o feed em desktops maiores para melhor aproveitamento do espaço */
     }
-
-    .nav-links li a {
-      display: block;
-      padding: 1rem;
-      width: 100%;
-    }
-
-    .menu-icon {
-      display: block;
-    }
-
-    #menu-toggle:checked + .menu-icon + .nav-links {
-      display: flex;
-    }
-
-    .main-banner h1 {
-      font-size: 2rem;
-    }
-
-    .main-banner p {
-      font-size: 1.2rem;
-    }
-
-    main {
-      grid-template-columns: 1fr; /* Uma coluna em telas pequenas */
-      padding: 0 var(--spacing-sm);
-    }
-  }
+}

@@ -1,68 +1,119 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sugira uma Solução - Banco Comunitário de Soluções Urbanas</title>
+    
+    <!-- UI: Google Fonts para tipografia consistente e moderna -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap" rel="stylesheet">
-    <title>Cadastro - Banco Comunitário de Soluções Urbanas</title>
-    <meta name="description" content="Cadastre-se e sugira soluções para problemas urbanos em Cornélio Procópio.">
-    <meta name="author" content="Lucas Souza Silva">
-    <meta property="og:title" content="Banco Comunitário de Soluções Urbanas">
-    <meta property="og:description" content="Participe na construção de uma cidade melhor em Cornélio Procópio.">
-    <meta property="og:image" content="https://i.imgur.com/Image.png">
-    <meta property="og:url" content="https://example.com">
-    <meta property="og:type" content="website">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+
+    <!-- UI: Link para o arquivo de estilos principal -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header class="hero">
+
+    <!-- UI: Cabeçalho principal com navegação clara e logo para identificação da marca -->
+    <header class="main-header">
         <div class="container">
-            <h1>Cadastro de Usuários e Soluções</h1>
-            <p>Participe na construção de uma cidade melhor.</p>
+            <a href="index.html" class="logo">Soluções Urbanas</a> <!-- UI: Logo clicável para retornar à página inicial -->
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="cadastro.html" class="active">Sugerir Solução</a></li> <!-- UI: Link ativo para indicar a página atual -->
+                    <li><a href="contato.html">Contato</a></li>
+                </ul>
+            </nav>
         </div>
     </header>
 
-    <nav class="container">
-        <ul>
-            <li><a href="index.html">Página Principal</a></li>
-            <li><a href="cadastro.html">Cadastro</a></li>
-            <li><a href="contato.html">Contato</a></li>
-            <li><a href="sobre.html">Sobre</a></li>
-        </ul>
-    </nav>
+    <main>
+        <div class="container">
+            <!-- UI: Contêiner do formulário para centralizar e destacar o formulário na página -->
+            <div class="form-container">
+                <h1 class="section-title">Cadastre sua Ideia</h1> <!-- UI: Título claro para a página, indicando a ação principal -->
+                <p style="text-align: center; margin-top: -1.5rem; margin-bottom: 2rem; color: var(--color-text-secondary);">Preencha o formulário abaixo para registrar um problema e sugerir uma solução para nossa cidade.</p> <!-- UI: Instrução clara e concisa para o usuário -->
 
-    <main class="container">
-        <section>
-            <h2>Cadastre-se</h2>
-            <form action="#" method="post">
-                <label for="nome">Nome:</label>
-                <input type="text" id="nome" name="nome" required>
-                <label for="email">E-mail:</label>
-                <input type="email" id="email" name="email" required>
-                <button type="submit">Cadastrar</button>
-            </form>
-        </section>
-        <section>
-            <h2>Sugira uma Solução</h2>
-            <form action="#" method="post">
-                <label for="problema">Problema Urbano:</label>
-                <input type="text" id="problema" name="problema" required>
-                <label for="solucao">Sua Solução:</label>
-                <textarea id="solucao" name="solucao" rows="4" required></textarea>
-                <button type="submit">Enviar Sugestão</button>
-            </form>
-        </section>
+                <!-- 
+                    Nota de UX: 
+                    Para uma experiência mais fluida, o cadastro de usuário poderia ser separado
+                    desta etapa ou integrado com login social (Google, Facebook) para reduzir o atrito.
+                    Por simplicidade, incluímos os campos de usuário aqui.
+                -->
+
+                <form action="#" method="POST">
+                    <!-- UI: Fieldset para agrupar campos relacionados, melhorando a organização e a compreensão do formulário -->
+                    <fieldset>
+                        <legend style="font-family: var(--font-headings); font-size: 1.2rem; margin-bottom: 1rem; color: var(--color-primary);">Sobre Você</legend> <!-- UI: Legenda clara para o grupo de campos -->
+                        <div class="form-group">
+                            <label for="nome">Seu Nome</label> <!-- UI: Label associado ao input para acessibilidade e clareza -->
+                            <input type="text" id="nome" name="nome" class="form-control" placeholder="Ex: João da Silva" required> <!-- UI: Placeholder para guiar o preenchimento e 'required' para validação HTML5 -->
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Seu E-mail</label>
+                            <input type="email" id="email" name="email" class="form-control" placeholder="Ex: joao.silva@email.com" required> <!-- UI: Tipo 'email' para validação de formato e placeholder -->
+                        </div>
+                    </fieldset>
+
+                    <fieldset style="margin-top: 2rem;">
+                        <legend style="font-family: var(--font-headings); font-size: 1.2rem; margin-bottom: 1rem; color: var(--color-primary);">Sobre o Problema/Solução</legend>
+                        <div class="form-group">
+                            <label for="titulo">Título do Problema</label>
+                            <input type="text" id="titulo" name="titulo" class="form-control" placeholder="Ex: Buracos na rua principal" required minlength="5"> <!-- UI: Placeholder e 'minlength' para garantir informações úteis -->
+                        </div>
+
+                        <div class="form-group">
+                            <label for="categoria">Categoria</label>
+                            <select id="categoria" name="categoria" class="form-control" required> <!-- UI: Select para categorias pré-definidas, facilitando a organização e análise dos dados -->
+                                <option value="" disabled selected>Selecione uma categoria</option> <!-- UI: Opção padrão desabilitada para forçar a seleção -->
+                                <option value="transporte">Transporte</option>
+                                <option value="lixo">Lixo e Reciclagem</option>
+                                <option value="seguranca">Segurança</option>
+                                <option value="infraestrutura">Infraestrutura</option>
+                                <option value="meio-ambiente">Meio Ambiente</option>
+                                <option value="outro">Outro</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="localizacao">Localização (Bairro/Rua)</label>
+                            <input type="text" id="localizacao" name="localizacao" class="form-control" placeholder="Ex: Centro, próximo à Praça da Matriz" required> <!-- UI: Placeholder para guiar o usuário na especificação da localização -->
+                        </div>
+
+                        <div class="form-group">
+                            <label for="descricao">Descrição Detalhada</label>
+                            <textarea id="descricao" name="descricao" class="form-control" placeholder="Descreva o problema e, se possível, sua sugestão de melhoria." required minlength="20"></textarea> <!-- UI: Textarea para descrições mais longas, com placeholder e 'minlength' -->
+                        </div>
+
+                        <div class="form-group">
+                            <label for="imagem">Enviar uma foto (Opcional)</label>
+                            <input type="file" id="imagem" name="imagem" class="form-control" accept="image/*"> <!-- UI: Input de arquivo para upload de imagens, com filtro para tipos de imagem -->
+                        </div>
+                    </fieldset>
+
+                    <!-- UI: Placeholder para mensagens de sucesso/erro. Visível para o usuário, mas a lógica de exibição seria controlada por JavaScript. -->
+                    <div id="form-messages" style="margin-top: 1rem;"></div>
+
+                    <div style="text-align: center; margin-top: 2rem;">
+                        <button type="submit" class="btn btn-primary" style="width: 100%; max-width: 300px;">Enviar Solução</button> <!-- UI: Botão de submissão claro e com estilo primário para destaque -->
+                    </div>
+                </form>
+            </div>
+        </div>
     </main>
 
-    <footer>
-        <p>&copy; <span id="current-year"></span> Lucas Souza Silva. Todos os direitos reservados.</p>
+    <!-- UI: Rodapé consistente em todas as páginas para navegação secundária e informações institucionais -->
+    <footer class="main-footer">
+        <div class="container">
+            <ul class="footer-links">
+                <li><a href="#">Currículos</a></li>
+                <li><a href="contato.html">Contato</a></li>
+            </ul>
+            <p class="footer-mention">Desenvolvido para a Universidade Tecnológica Federal do Paraná (UTFPR) - 2024</p>
+        </div>
     </footer>
 
-    <script>
-        // Adiciona o ano atual no rodapé dinamicamente
-        document.getElementById('current-year').textContent = new Date().getFullYear();
-    </script>
 </body>
 </html>
