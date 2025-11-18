@@ -12,9 +12,9 @@
   </p>
   
   <!-- Badges -->
-  <img src="https://img.shields.io/github/last-commit/exemplo/repo" alt="Last Commit">
-  <img src="https://img.shields.io/github/license/exemplo/repo" alt="License">
-  <img src="https://img.shields.io/github/stars/exemplo/repo?style=social" alt="Stars">
+  <img src="https://img.shields.io/github/last-commit/lucaszsilva1/programacao-web" alt="Last Commit">
+  <img src="https://img.shields.io/github/license/lucaszsilva1/programacao-web" alt="License">
+  <img src="https://img.shields.io/github/stars/lucaszsilva1/programacao-web?style=social" alt="Stars">
 
 </div>
 
@@ -78,11 +78,11 @@ Siga os passos abaixo para executar o projeto em seu ambiente local.
 ### ⚙️ Instalação e Execução
 1. Clone o repositório:
    ```bash
-   git clone https://github.com/seu-usuario/seu-repositorio.git
+   git clone https://github.com/lucaszsilva1/programacao-web.git
    ```
 2. Navegue até o diretório do projeto:
    ```bash
-   cd seu-repositorio
+   cd programacao-web
    ```
 3. Abra o arquivo `index.html` diretamente no seu navegador ou inicie seu servidor local.
 
@@ -130,9 +130,8 @@ Distribuído sob a licença MIT. Veja `LICENSE.txt` para mais informações.
 
 ## 🧑‍💻 Desenvolvedores
 
-| [<img src="https://avatars.githubusercontent.com/u/lucaszsilva1"<br><sub>Lucas Souza Silva</sub>](https://github.com/lucaszsilva1)
-| :---: |
+| [<img src="https://avatars.githubusercontent.com/u/lucaszsilva1" width="115"><br><sub>Lucas Souza Silva</sub>](https://github.com/lucaszsilva1) |
 
 <p align="center">
-  Feito com ❤️ pela comunidade da <strong>UTFPR</strong>.
+  Feito com ❤️ pelo <strong>Lucas</strong>.
 </p>
