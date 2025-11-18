@@ -130,7 +130,7 @@ Distribuído sob a licença MIT. Veja `LICENSE.txt` para mais informações.
 
 ## 🧑‍💻 Desenvolvedores
 
-| [<img src="https://avatars.githubusercontent.com/u/exemplo" width=115><br><sub>Lucas Souza Silva</sub>](https://github.com/exemplo) |
+| [<img src="https://avatars.githubusercontent.com/u/lucaszsilva1"<br><sub>Lucas Souza Silva</sub>](https://github.com/lucaszsilva1)
 | :---: |
 
 <p align="center">
